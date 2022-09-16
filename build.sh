@@ -2,7 +2,7 @@
 
 echo "Start to build working enviorent"
 sudo apt-get update && sudo apt-get upgrade || exit 1
-sudo apt-get install git tmux zsh vim curl
+sudo apt-get install git tmux zsh vim curl trash-cli
 echo "set zsh"
 chsh -s /usr/bin/zsh $USER
 echo "ln profiles"
