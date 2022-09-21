@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/huchao/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -101,13 +101,14 @@ ulimit -c unlimited
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #export ALL_PROXY="http://127.0.0.1:7890"
-export PATH="/home/huchao/.local/bin:$PATH"
+export PATH="/home/$USER/.local/bin:$PATH"
 export CMAKE_INCLUDE_PATH=/usr/include/hello
 export CMAKE_LIBRARY_PATH=
 export ROS_PARALLEL_JOBS='-j2 -l2'
 export PATH=$PATH:~/.local/bin/
 #export LIBGL_ALWAYS_INDIRECT=1
-export DISPLAY=172.21.32.1:0.0
+#export DISPLAY=172.21.32.1:0.0
+export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
 
 
 
@@ -150,6 +151,6 @@ alias git-save-ps="git config credential.helper store"
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
-#export http_proxy="http://192.168.10.44:7890"
-#export https_proxy="http://192.168.10.44:7890"
-#export ALL_PROXY="socks5://192.168.10.44:7890"
+export http_proxy="http://192.168.10.44:7890"
+export https_proxy="http://192.168.10.44:7890"
+export ALL_PROXY="socks5://192.168.10.44:7890"

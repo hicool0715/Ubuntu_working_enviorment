@@ -160,3 +160,13 @@ inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 set number
 set viminfo='20,<50,s10
 set clipboard=exclude:.*
+
+
+" 空格缩进设置
+set tabstop=2
+set softtabstop=2 
+set shiftwidth=2 
+set noexpandtab 
+set nu  
+set autoindent 
+set cindent
