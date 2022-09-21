@@ -107,8 +107,9 @@ export CMAKE_LIBRARY_PATH=
 export ROS_PARALLEL_JOBS='-j2 -l2'
 export PATH=$PATH:~/.local/bin/
 #export LIBGL_ALWAYS_INDIRECT=1
-#export DISPLAY=172.21.32.1:0.0
-export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+#export DISPLAY=0
+#export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+
 
 
 
@@ -120,7 +121,7 @@ alias aug="sudo apt-get upgrade"
 alias ai="sudo apt-get install -i "
 alias vi-zsh="vi ~/.zshrc"
 alias up-zsh="source ~/.zshrc"
-alias vi-vim="source ~/.vimrc"
+alias vi-vim="vi ~/.vimrc"
 alias vi-tmux="source ~/.tmux.conf"
 alias up-tmux="tmux source-file ~/.tmux.conf"
 alias rmt="trash"
