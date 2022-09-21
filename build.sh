@@ -38,6 +38,7 @@ CURR_USER=$USER
 su root
 curl -sL https://install-node.vercel.app/lts | bash
 su $CURR_USER
+sudo apt-get install ctags
 # zsh install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "install zsh plugins"
