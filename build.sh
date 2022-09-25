@@ -15,7 +15,8 @@ ln -s $EXEC_DIR/tmux.conf.file ~/.tmux.conf
 echo "Install some enviorments"
 
 # vim install
-cd ~/Downloads
+mkdir -p /tmp/vim_build_dir
+cd /tmp/vim_build_dir
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 git clone https://github.com/vim/vim.git 
 cd vim 
@@ -32,18 +33,19 @@ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
             --enable-perlinterp \
             --enable-luainterp \
             --enable-gui=gtk2 --enable-cscope --prefix=/usr/local/
-make cat /proc/cpuinfo| grep "processor"| wc -l&& sudo make install
+make `cat /proc/cpuinfo`| grep "processor"| wc -l
+sudo make install
 sudo mv /usr/bin/vim usr/bin/vim-default
 CURR_USER=$USER
-su root
-curl -sL https://install-node.vercel.app/lts | bash
-su $CURR_USER
-sudo apt-get install ctags
 # zsh install
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "install zsh plugins"
-git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
-git clone https://github.com/jeffreytse/zsh-vi-mode $ZSH_CUSTOM/plugins/zsh-vi-mode
+git clone https://github.com/zsh-users/zsh-autosuggestions.git /home/$USER/.oh-my-zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git  /home/$USER//.oh-my-zsh/plugins/zsh-syntax-highlighting
+git clone https://github.com/jeffreytse/zsh-vi-mode /home/$USER//.oh-my-zsh/plugins/zsh-vi-mode
 
+sudo apt-get install ctags
+su root
+curl -sL https://install-node.vercel.app/lts | bash
+su $CURR_USER
 echo "Build working enviorment finished"

@@ -152,6 +152,6 @@ alias git-save-ps="git config credential.helper store"
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
-export http_proxy="http://192.168.10.44:7890"
-export https_proxy="http://192.168.10.44:7890"
-export ALL_PROXY="socks5://192.168.10.44:7890"
+export http_proxy="http://192.168.10.157:7890"
+export https_proxy="http://192.168.10.157:7890"
+export ALL_PROXY="socks5://192.168.10.157:7890"
