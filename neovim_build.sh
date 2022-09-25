@@ -39,5 +39,10 @@ if [ ! -d /home/$USER/.config/nvim ]; then
 	mkdir -p /home/$USER/.config/nvim
 fi
 
+sudo apt-get install ctags
 
+echo "nodejs need to be installed in root, not sudo"
+echo "please run this command: "
+echo "curl -sL https://install-node.vercel.app/lts | bash"
+ehco "to isntall nodejs"
 
