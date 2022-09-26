@@ -25,7 +25,7 @@ echo "ZSH install finished"
 
 echo "Change to zsh or later (Y/N)"
 read anwser
-if [ $anwser -ne "Y" ]; then
+if [ $anwser != "Y" ]; then
   exit 0
 fi
 chsh -s /usr/bin/zsh $USER
