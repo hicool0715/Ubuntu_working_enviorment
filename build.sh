@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 EXEC_DIR=$PWD
 echo "Start to build working enviorent"
 sudo apt-get update && sudo apt-get upgrade || exit 1
@@ -33,7 +33,7 @@ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
             --enable-perlinterp \
             --enable-luainterp \
             --enable-gui=gtk2 --enable-cscope --prefix=/usr/local/
-make `cat /proc/cpuinfo`| grep "processor"| wc -l
+make -j`cat /proc/cpuinfo| grep "processor"| wc -l`
 sudo make install
 sudo mv /usr/bin/vim usr/bin/vim-default
 CURR_USER=$USER
