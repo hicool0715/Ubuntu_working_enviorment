@@ -72,7 +72,6 @@ ZSH_THEME="ys"
 # Add wisely, as too many plugins slow down shell stplugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract)
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract zsh-vi-mode )
 source $ZSH/oh-my-zsh.sh
-source /opt/ros/melodic/setup.zsh
 setopt nonomatch
 ulimit -c unlimited
 # User configuration
@@ -152,6 +151,6 @@ alias git-save-ps="git config credential.helper store"
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
-export http_proxy="http://192.168.10.157:7890"
-export https_proxy="http://192.168.10.157:7890"
-export ALL_PROXY="socks5://192.168.10.157:7890"
+export http_proxy="http://192.168.31.177:7890"
+export https_proxy="http://192.168.31.177:7890"
+export ALL_PROXY="socks5://192.168.31.177:7890"

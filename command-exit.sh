@@ -18,6 +18,6 @@ function autoCmdInstall() {
   local install_cmd=$2
   isCmdExist $cmd
   if [ $? -ne 0 ]; then
-    sudo apt-get install install_cmd
+    sudo apt-get install $install_cmd -y
   fi
 }
