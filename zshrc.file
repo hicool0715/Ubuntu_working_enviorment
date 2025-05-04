@@ -70,7 +70,7 @@ ZSH_THEME="ys"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell stplugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract)
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract zsh-vi-mode )
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting z extract fast-syntax-highlighting zsh-autocomplete)
 source $ZSH/oh-my-zsh.sh
 setopt nonomatch
 ulimit -c unlimited
@@ -121,7 +121,7 @@ alias ai="sudo apt-get install -i "
 alias vi-zsh="vi ~/.zshrc"
 alias up-zsh="source ~/.zshrc"
 alias vi-vim="vi ~/.vimrc"
-alias vi-tmux="source ~/.tmux.conf"
+alias vi-tmux="vi ~/.tmux.conf"
 alias up-tmux="tmux source-file ~/.tmux.conf"
 alias rmt="trash"
 alias files="nautilus"
@@ -151,6 +151,8 @@ alias git-save-ps="git config credential.helper store"
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
-export http_proxy="http://192.168.31.177:7890"
-export https_proxy="http://192.168.31.177:7890"
-export ALL_PROXY="socks5://192.168.31.177:7890"
+# WSL2代理脚本
+# 虚拟机代理脚本
+export http_proxy="http://172.23.208.1:7897"
+export https_proxy="http://172.23.208.1:7897"
+export ALL_PROXY="socks5://172.23.208.1:7897"

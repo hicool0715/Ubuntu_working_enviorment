@@ -5,7 +5,6 @@ echo "Start to build vim"
 . $EXEC_DIR/command-exit.sh
 
 sudo apt-get update -y && sudo apt-get upgrade -y && autoCmdInstall zsh zsh
-fi
 chsh -s /usr/bin/zsh $USER
 autoCmdInstall curl curl  
 if [ -f /home/$USER/.zshrc ]; then
